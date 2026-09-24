@@ -6,18 +6,20 @@
   "scripts": {
     "dev": "wrangler dev --ip 0.0.0.0 --remote",
     "build": "tsc",
-    "deploy": "wrangler publish",
-    "clean": "git clean -xdf .cache .turbo node_modules .wrangler"
+    "deploy": "wrangler deploy",
+    "clean": "git clean -xdf .cache .turbo node_modules .wrangler",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@acme/db": "workspace:*",
-    "@acme/trpc": "workspace:*",
-    "typescript": "catalog:",
-    "wrangler": "3.93.0"
+    "@acme/trpc": "workspace:*"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
-    "@types/node": "^20.16.11"
+    "@cloudflare/workers-types": "^5.20260921.1",
+    "@types/node": "^22.15.0",
+    "typescript": "catalog:",
+    "wrangler": "catalog:"
   }
 }

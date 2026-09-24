@@ -20,16 +20,16 @@
   },
   "dependencies": {
     "@acme/db": "workspace:*",
-    "@clerk/nextjs": "^6.4.2",
-    "@trpc/server": "11.0.0-rc.633",
-    "superjson": "2.2.1",
+    "@clerk/backend": "^3.19.0",
+    "@trpc/server": "catalog:",
+    "superjson": "^2.2.2",
     "zod": "catalog:"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
     "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
-    "@cloudflare/workers-types":"4.20241205.0",
+    "@cloudflare/workers-types": "^5.20260921.1",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:"

@@ -114,13 +114,15 @@ export class DailyRecapWorkflow extends WorkflowEntrypoint<Env, DailyRecapWorkfl
 			console.log('Enhanced prompt with style:', enhancedPrompt);
 
 			const res = await this.env.AI.run(
-				// @ts-ignore
-				'@cf/black-forest-labs/flux-1-schnell', {
+				'@cf/black-forest-labs/flux-1-schnell',
+				{
 					prompt: enhancedPrompt,
-					num_steps: 8
-				}
+					steps: 8,
+				},
 			);
-			// @ts-ignore
+			if (!res.image) {
+				throw new Error('Image generation returned no image data');
+			}
 			return res.image;
 		});
 

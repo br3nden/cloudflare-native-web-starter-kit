@@ -2,6 +2,16 @@
 
 A starter template that demonstrates how to build AI-powered mobile and web applications using Cloudflare workers and wrangler CLI. This example app creates AI-generated stories about a user's day and generates accompanying images - all powered by Cloudflare workers. You can use this as a foundation to build any type of AI-powered application you want.
 
+## Stack (modernized)
+
+| Layer | Versions |
+| --- | --- |
+| Tooling | Node 22+, pnpm 10, Turborepo 2.11 |
+| Web | Astro 7, React 19, Tailwind CSS 4 (`@tailwindcss/vite`) |
+| Mobile | Expo SDK 57, React Native 0.86 |
+| API | tRPC 11 (stable), Drizzle ORM 0.45, Zod 3 |
+| Cloudflare | Wrangler 4, Workers Types v5, `wrangler.jsonc` configs |
+
 ## 🚀 Features
 
 - 📱 **Expo Mobile App**: Cross-platform mobile application
@@ -31,8 +41,8 @@ A starter template that demonstrates how to build AI-powered mobile and web appl
 
 ## 🛠️ Prerequisites
 
-- Node.js >= 20.16.0
-- pnpm >= 9.6.0
+- Node.js >= 22.12.0
+- pnpm >= 10.0.0
 - Cloudflare account
 - Wrangler CLI (`npm install -g wrangler`)
 - Clerk account
@@ -42,8 +52,8 @@ A starter template that demonstrates how to build AI-powered mobile and web appl
 1. **Clone the repository**
 
 ```bash
-git clone <repository-url>
-cd cloudflare-turbo
+git clone https://github.com/br3nden/cloudflare-native-web-starter-kit.git
+cd cloudflare-native-web-starter-kit
 ```
 
 2. **Install dependencies**
@@ -71,21 +81,28 @@ wrangler r2 bucket create your-bucket-name
 
 4. **Configure wrangler.toml Files**
 
-You'll need to update the wrangler.toml files in both `apps/apiservice` and `apps/workflows` with your specific configuration:
+You'll need to update the `wrangler.jsonc` files in both `apps/apiservice` and `apps/workflows` with your specific configuration:
 
-Example `wrangler.toml` structure:
-```toml
-name = "your-app-name"
-main = "src/index.ts"
-
-[[d1_databases]]
-binding = "DB"
-database_name = "your-database-name"
-database_id = "your-database-id"
-
-[[r2_buckets]]
-binding = "BUCKET"
-bucket_name = "your-bucket-name"
+Example `wrangler.jsonc` structure:
+```jsonc
+{
+  "name": "your-app-name",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-01-15",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "your-database-name",
+      "database_id": "your-database-id"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "BUCKET",
+      "bucket_name": "your-bucket-name"
+    }
+  ]
+}
 ```
 
 5. **Set up Cloudflare API Token**
@@ -128,6 +145,7 @@ pnpm run deploy
 Create `.env` files based on the provided examples and update with your credentials:
 ```bash
 cp apps/expo/.env.example apps/expo/.env
+# Set EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY and EXPO_PUBLIC_R2_PUBLIC_URL (your R2 public bucket URL, if using recap images)
 ```
 
 8. **Start Development**

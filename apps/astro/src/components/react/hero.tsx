@@ -44,7 +44,7 @@ export function Hero() {
           </p>
 
           <div className="mt-10 flex justify-center gap-4">
-            <a href="https://github.com/brenden-js/cloudflare-native-web-starter-kit">
+            <a href="https://github.com/br3nden/cloudflare-native-web-starter-kit">
               <Button size="lg" variant="secondary" className="bg-white/10 hover:bg-white/20 text-white border-white/10">
                 <GithubIcon className="mr-2 h-5 w-5" />
                 Clone Repository

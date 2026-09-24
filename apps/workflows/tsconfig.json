@@ -1,16 +1,11 @@
 {
+  "extends": "@acme/tsconfig/base.json",
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "strict": true,
-    "skipLibCheck": true,
-    "lib": [
-      "ESNext"
-    ],
-    "types": [
-        "@cloudflare/workers-types"
-    ],
+    "lib": ["ESNext"],
+    "types": ["@cloudflare/workers-types"]
   },
-	"extends": "@acme/tsconfig/base.json"
+  "include": ["src/**/*.ts", "worker-configuration.d.ts"]
 }

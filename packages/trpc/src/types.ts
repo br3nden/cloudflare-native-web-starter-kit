@@ -1,12 +1,16 @@
-import type {AuthObject} from '@clerk/backend';
 import type {FetchCreateContextFnOptions} from '@trpc/server/adapters/fetch';
 import type { DrizzleDB }from "@acme/db";
 import type { R2Bucket } from '@cloudflare/workers-types';
 
+/** Minimal Clerk session shape used by API routers (avoids leaking internal Clerk types in emitted declarations). */
+export interface SessionAuth {
+  userId: string;
+}
+
 export interface CustomContext {
   req: FetchCreateContextFnOptions['req'];
   resHeaders: FetchCreateContextFnOptions['resHeaders'];
-  user: AuthObject | null;
+  user: SessionAuth | null;
   db: DrizzleDB;
   imagesBucket: R2Bucket;
 }

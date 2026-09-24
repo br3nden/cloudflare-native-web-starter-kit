@@ -24,7 +24,7 @@ export function Footer() {
 
           <div className="flex gap-x-6">
             <a 
-              href="https://github.com/brenden-js/cloudflare-native-web-starter-kit" 
+              href="https://github.com/br3nden/cloudflare-native-web-starter-kit" 
               aria-label="Cloudflare Native Kit on GitHub"
               className="text-gray-400 hover:text-white transition-colors"
             >

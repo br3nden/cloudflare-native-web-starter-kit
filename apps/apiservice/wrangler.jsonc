@@ -1,0 +1,33 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "apiservice",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-01-15",
+  "compatibility_flags": ["nodejs_compat_v2"],
+  "build": {
+    "command": "pnpm run build"
+  },
+  "r2_buckets": [
+    {
+      "bucket_name": "",
+      "preview_bucket_name": "",
+      "binding": "IMAGES_BUCKET"
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "",
+      "database_id": ""
+    }
+  ],
+  "vars": {
+    "WRANGLER_BUILD_CONDITIONS": "",
+    "WRANGLER_BUILD_PLATFORM": "node",
+    "CLERK_PUBLISHABLE_KEY": "",
+    "CLERK_SECRET_KEY": ""
+  },
+  "dev": {
+    "port": 8787
+  }
+}
