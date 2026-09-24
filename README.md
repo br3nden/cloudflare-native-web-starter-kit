@@ -52,8 +52,8 @@ A starter template that demonstrates how to build AI-powered mobile and web appl
 1. **Clone the repository**
 
 ```bash
-git clone <repository-url>
-cd cloudflare-turbo
+git clone https://github.com/br3nden/cloudflare-native-web-starter-kit.git
+cd cloudflare-native-web-starter-kit
 ```
 
 2. **Install dependencies**
@@ -145,6 +145,7 @@ pnpm run deploy
 Create `.env` files based on the provided examples and update with your credentials:
 ```bash
 cp apps/expo/.env.example apps/expo/.env
+# Set EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY and EXPO_PUBLIC_R2_PUBLIC_URL (your R2 public bucket URL, if using recap images)
 ```
 
 8. **Start Development**
