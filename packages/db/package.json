@@ -24,17 +24,17 @@
     "migrate": "pnpm with-env drizzle-kit migrate"
   },
   "dependencies": {
-    "@vercel/postgres": "^0.10.0",
-    "drizzle-orm": "^0.35.1",
-    "drizzle-zod": "^0.5.1",
+    "drizzle-orm": "^0.45.3",
+    "drizzle-zod": "^0.8.2",
     "zod": "catalog:"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
     "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
-    "dotenv-cli": "^7.4.2",
-    "drizzle-kit": "^0.26.2",
+    "@cloudflare/workers-types": "^5.20260921.1",
+    "dotenv-cli": "^8.0.0",
+    "drizzle-kit": "^0.31.11",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:"

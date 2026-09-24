@@ -24,7 +24,13 @@ export async function createContext({
     return {req, resHeaders, user: null, db, imagesBucket};
   }
 
-  const user = res.toAuth();  // This can return null if not authenticated
+  const auth = res.toAuth();
+  const user =
+    auth?.tokenType === 'session_token' &&
+    auth.isAuthenticated &&
+    auth.userId
+      ? { userId: auth.userId }
+      : null;
 
   return {req, resHeaders, user, db, imagesBucket};
 }

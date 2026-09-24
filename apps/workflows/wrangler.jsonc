@@ -1,0 +1,45 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "recap-workflows",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-01-15",
+  "compatibility_flags": ["nodejs_compat_v2"],
+  "observability": {
+    "enabled": true
+  },
+  "workflows": [
+    {
+      "name": "daily-recap-workflow",
+      "binding": "DAILY_RECAP_WORKFLOW",
+      "class_name": "DailyRecapWorkflow"
+    },
+    {
+      "name": "get-users-for-recap-workflow",
+      "binding": "GET_USERS_WORKFLOW",
+      "class_name": "GetUsersForRecapWorkflow"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "bucket_name": "replace-with-yours",
+      "preview_bucket_name": "replace-with-yours",
+      "binding": "IMAGES_BUCKET"
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "replace-with-yours",
+      "database_id": "replace-with-yours"
+    }
+  ],
+  "ai": {
+    "binding": "AI"
+  },
+  "triggers": {
+    "crons": ["0 6 * * *"]
+  },
+  "dev": {
+    "port": 8788
+  }
+}

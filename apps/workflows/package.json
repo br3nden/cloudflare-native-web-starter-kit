@@ -1,17 +1,21 @@
 {
-	"name": "@acme/workflows",
-	"version": "0.0.1",
-	"scripts": {
-		"deploy": "wrangler deploy",
-		"dev": "wrangler dev --test-scheduled --remote",
-		"clean": "git clean -xdf .cache .turbo node_modules .wrangler"
-	},
-	"type": "module",
-	"devDependencies": {
-		"@acme/db": "workspace:*",
-		"@acme/eslint-config": "workspace:*",
-		"@acme/tsconfig": "workspace:*",
-		"typescript": "^5.3.3",
-		"wrangler": "3.93.0"
-	}
+  "name": "@acme/workflows",
+  "version": "0.0.1",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev --test-scheduled --remote",
+    "clean": "git clean -xdf .cache .turbo node_modules .wrangler",
+    "typecheck": "tsc --noEmit"
+  },
+  "type": "module",
+  "dependencies": {
+    "@acme/db": "workspace:*"
+  },
+  "devDependencies": {
+    "@acme/eslint-config": "workspace:*",
+    "@acme/tsconfig": "workspace:*",
+    "@cloudflare/workers-types": "^5.20260921.1",
+    "typescript": "catalog:",
+    "wrangler": "catalog:"
+  }
 }
