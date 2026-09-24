@@ -18,8 +18,8 @@ import { Ionicons } from '@expo/vector-icons';
 
 const { width } = Dimensions.get('window');
 
-// Construct R2 URL using account ID
-const R2_PUBLIC_URL = `https://pub-17ae87fb525c458eb847cb91755fc43b.r2.dev`;
+/** Public R2 bucket URL (enable public access in the dashboard, or use a custom domain). */
+const R2_PUBLIC_URL = process.env.EXPO_PUBLIC_R2_PUBLIC_URL?.replace(/\/$/, '');
 
 export const getTypeBadgeColor = (type: string) => {
   switch (type) {

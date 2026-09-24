@@ -76,7 +76,7 @@ function MobileNavigation() {
             <MobileNavLink href="#features">Features</MobileNavLink>
             <MobileNavLink href="/docs">Documentation</MobileNavLink>
             <hr className="m-2 border-white/10" />
-            <MobileNavLink href="https://github.com/brenden-js/cloudflare-native-web-starter-kit">
+            <MobileNavLink href="https://github.com/br3nden/cloudflare-native-web-starter-kit">
               GitHub
             </MobileNavLink>
           </Popover.Panel>
@@ -107,7 +107,7 @@ export function Header() {
           <div className="flex items-center gap-x-5 md:gap-x-8">
             <div className="hidden md:block">
               <a 
-                href="https://github.com/brenden-js/cloudflare-native-web-starter-kit" 
+                href="https://github.com/br3nden/cloudflare-native-web-starter-kit" 
                 className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
               >
                 <Github className="h-5 w-5" />
